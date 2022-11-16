@@ -3,22 +3,25 @@
 
 Console.Write("Сколько элементов будет в массиве? Ведите число:  ");
 int Length = Convert.ToInt32(Console.ReadLine());
- 
 int[] array = new int[Length];
-
 for(int i = 0; i < Length; i++)
 {
     array[i] = new Random().Next(0, 100);
     Console.Write(array[i] + " ");
 }
-int sumNech = 0;
-for(int i = 0 ; i < Length; i++ )
+int SumNech(int[] array, int Length)
 {
-    if( i % 2 > 0)
+    int sumNech = 0;
+    for(int i = 0 ; i < Length; i++ )
     {
-        sumNech += array[i];
+       if( i % 2 > 0)
+       {
+           sumNech += array[i];
+       } 
     }
+    return sumNech;
 }
+int sumNech = SumNech(array, Length);
 Console.WriteLine();
 Console.WriteLine($"Сумма элементов на нечетных позициях  = {sumNech}");
 
